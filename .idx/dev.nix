@@ -14,7 +14,7 @@
         "dev"
         "--"
         "--port"
-        (builtins.getEnv "PORT" or "9002")
+        (builtins.toString (builtins.getEnv "PORT" // "9002"))
       ];
       manager = "web";
     };
